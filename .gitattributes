@@ -1,2 +1,14 @@
 *.bin filter=lfs diff=lfs merge=lfs -text
 src/tuned_SBERT/0_Transformer/pytorch_model.bin filter=lfs diff=lfs merge=lfs -text
+data/tidy_train.csv filter=lfs diff=lfs merge=lfs -text
+data/tidy_train_clean_old.csv filter=lfs diff=lfs merge=lfs -text
+data/data_train_train.csv filter=lfs diff=lfs merge=lfs -text
+data/data_train_valid.csv filter=lfs diff=lfs merge=lfs -text
+data/embedded_test_fine_tuned.csv filter=lfs diff=lfs merge=lfs -text
+data/embedded_train_fine_tuned.csv filter=lfs diff=lfs merge=lfs -text
+data/sentiment_labels.txt filter=lfs diff=lfs merge=lfs -text
+data/tidy_test.csv filter=lfs diff=lfs merge=lfs -text
+data/dictionary.txt filter=lfs diff=lfs merge=lfs -text
+data/embedded_test_old.csv filter=lfs diff=lfs merge=lfs -text
+data/embedded_train.csv filter=lfs diff=lfs merge=lfs -text
+data/embedded_valid_fine_tuned.csv filter=lfs diff=lfs merge=lfs -text
