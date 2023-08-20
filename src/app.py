@@ -3,7 +3,7 @@
 """
 Created on Sun Aug 20 13:54:40 2023
 
-@author: guille
+@author: Guillermo Ruiz Laborda
 """
 
 import joblib
@@ -11,7 +11,8 @@ import pandas as pd
 import re
 import os
 
-os.chdir('/Users/guille/Sentiment-Analysis')
+
+cwd=os.getcwd()
 
 from sentence_transformers import SentenceTransformer
 from nltk.corpus import stopwords
@@ -28,8 +29,8 @@ from flask_basicauth import BasicAuth
 
 model = SentenceTransformer('stsb-roberta-base')
 
-model.load('src/tuned_SBERT')
-pipeline_filename = 'src/trained_softmax_pipeline.joblib'
+model.load(cwd+'/src/tuned_SBERT')
+pipeline_filename = cwd+'/src/trained_softmax_pipeline.joblib'
 
 loaded_pipeline = joblib.load(pipeline_filename)
 
@@ -101,14 +102,14 @@ emoji_mapping = {
 app = Flask(__name__)
 api = Api(app)
 
-app.config['BASIC_AUTH_USERNAME'] = 'guillermo'
-app.config['BASIC_AUTH_PASSWORD'] = 'santander'
+app.config['BASIC_AUTH_USERNAME'] = 'name'
+app.config['BASIC_AUTH_PASSWORD'] = 'password'
 basic_auth = BasicAuth(app)
 
 
 # Configura la ruta a la carpeta de plantillas
 import os
-template_dir = os.path.abspath('/Users/guille/Sentiment-Analysis/src')
+template_dir = os.path.abspath(cwd+'/src')
 app.template_folder = template_dir
 
 
@@ -157,5 +158,5 @@ def get_sentiment_score():
     return jsonify(response)
 
 if __name__ == '__main__':
-    app.run(host='192.168.1.29')
-    #app.run()
+    #host=
+    app.run()
