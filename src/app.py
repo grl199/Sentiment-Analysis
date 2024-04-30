@@ -11,6 +11,8 @@ import pandas as pd
 import re
 import os
 
+from googletrans import Translator
+
 
 cwd=os.getcwd()
 
@@ -108,12 +110,10 @@ basic_auth = BasicAuth(app)
 
 
 # Configura la ruta a la carpeta de plantillas
-import os
 template_dir = os.path.abspath(cwd+'/src')
 app.template_folder = template_dir
 
 
-from googletrans import Translator
 translator = Translator()
 
 
@@ -132,8 +132,8 @@ def get_sentiment_score():
     # Get the phrase from the user
     phrase = request.args.get('phrase')
 
-    translation_needed = translator.detect(phrase).lang!='en' 
-    
+    translation_needed = translator.detect(phrase).lang!='en'
+
 
     if translation_needed:
         phrase_in_english = translator.translate(phrase).text
@@ -143,7 +143,7 @@ def get_sentiment_score():
 
     # Get the associated emoji
     emoji = emoji_mapping[happiness_level]
-    
+
     print(translation_needed)
 
     # Prepare the response
@@ -159,4 +159,6 @@ def get_sentiment_score():
 
 if __name__ == '__main__':
     #host=
-    app.run()
+    print('Running main')
+    #app.run('192.168.1.29',port=5001)
+    app.run('127.0.0.1',port=5001)

@@ -5,3 +5,4 @@ seaborn==0.12.2
 requests==2.26.0
 sentence-transformers==2.2.2
 transformers==4.31.0
+googletrans==3.1.0a0
