@@ -40,7 +40,7 @@ The project is based on the [Sentence Transformers](https://www.sbert.net/) libr
 
     ```bash
     python -m venv sentiment_analysis
-    source venv/bin/activate    # On Windows: venv\Scripts\activate
+    source sentiment_analysis/bin/activate    # On Windows: venv\Scripts\activate
     ```
 
 4. Install the project dependencies using the requirements.txt file:
